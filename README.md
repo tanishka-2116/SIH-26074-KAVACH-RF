@@ -1,40 +1,103 @@
-# KAVACH-RF — SIH 26074
+# KAVACH-RF
 
-AI/ML-based Panchayat-level weather forecasting and downscaling prototype for agro-meteorological advisory services.
+## AI-Based Panchayat-Level Weather Forecast Downscaling
 
-## Smart India Hackathon 2026
-- Problem Statement: **26074**
-- Theme: Agriculture, FoodTech & Rural Development
-- Category: Software
-- Team: KAVACH-RF
+**Smart India Hackathon 2026 — Problem Statement SIH26074**
 
-## Dashboard
-This repository currently contains a frontend prototype for the KAVACH-RF Panchayat Weather Intelligence dashboard.
+> Downscaling of weather forecast from Block level to Panchayat level: Inferring high-resolution plots/data/information from low-resolution plots/data/information/variables for agro-meteorological advisory services.
 
-### Core flow
-Block-level forecast → KAVACH-RF ML downscaling → Panchayat-level forecast → confidence/uncertainty → actionable advisory
+**Theme:** Agriculture, FoodTech & Rural Development  
+**Category:** Software  
+**Team:** KAVACH-RF
 
-## Run locally
+---
 
-No build step is required.
+## 1. Overview
 
-1. Download/clone the repository.
-2. Open `index.html` in a browser.
+KAVACH-RF is an AI/ML-based weather downscaling system designed to transform
+coarse Block-level weather forecasts into more localized Panchayat-level
+weather information.
 
-For a local server:
+The system combines weather forecasts with historical observations and
+local geographical characteristics such as terrain, elevation, land use,
+and seasonal behaviour to infer finer-scale weather conditions.
 
-```bash
-python -m http.server 5500
-```
+The objective is to provide Panchayat-level weather information that can
+support more localized agro-meteorological advisory and farm-level
+decision-making.
 
-Then open `http://localhost:5500`.
+---
 
-## Next integrations
-- IMD / approved weather data ingestion
-- ERA5 / ERA5-Land
-- ISRO/MOSDAC geospatial layers
-- DEM / terrain and land-use features
-- KAVACH-RF ML model API
-- Real Panchayat boundary GeoJSON
-- Forecast confidence and uncertainty service
-- Agro-meteorological advisory engine
+## 2. Problem
+
+Existing weather forecasts are often available at a spatial resolution
+that covers a large geographic area. A single forecast value may therefore
+represent multiple Panchayats even though local weather conditions can
+differ because of:
+
+- Terrain and elevation
+- Land-use characteristics
+- Historical weather patterns
+- Seasonal behaviour
+- Local rainfall variability
+
+This creates a spatial information gap between the available forecast and
+the scale at which local agricultural decisions are made.
+
+For example, irrigation, sowing, spraying and crop-management decisions can
+benefit from weather information that represents the local Panchayat rather
+than only the surrounding Block.
+
+---
+
+## 3. Proposed Solution
+
+KAVACH-RF proposes an AI/ML-based downscaling pipeline that learns the
+relationship between coarse weather forecasts and finer-scale local
+weather behaviour.
+
+The proposed system combines:
+
+1. Block-level weather forecasts
+2. Historical weather observations
+3. Terrain and elevation information
+4. Land-use information
+5. Seasonal behaviour
+
+These inputs are processed and provided to a machine-learning based
+downscaling model to generate Panchayat-level weather information.
+
+### Target Forecast Variables
+
+- Rainfall
+- Temperature
+- Wind
+- Humidity
+- Forecast confidence / uncertainty
+
+---
+
+## 4. Core Idea
+
+```text
+                BLOCK-LEVEL FORECAST
+                         │
+                         ▼
+        ┌────────────────────────────────┐
+        │      LOCAL INFORMATION         │
+        │                                │
+        │  Historical Weather            │
+        │  Terrain / Elevation           │
+        │  Land Use                      │
+        │  Seasonal Behaviour            │
+        └────────────────┬───────────────┘
+                         │
+                         ▼
+                AI/ML DOWNSCALING
+                         │
+                         ▼
+              PANCHAYAT-LEVEL FORECAST
+                         │
+                         ▼
+        Rainfall • Temperature • Wind
+              Humidity • Confidence
