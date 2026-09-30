@@ -1,0 +1,113 @@
+{
+  "panchayat-a": {
+    "name": "Panchayat A",
+    "state": "Assam",
+    "district": "Demo District",
+    "block": "Demo Block",
+    "temperature": 27.4,
+    "rainfall": 18.2,
+    "humidity": 72,
+    "confidence": 87,
+    "risk": "MODERATE",
+    "riskClass": "moderate",
+
+    "forecast": [
+      45,
+      30,
+      68,
+      82,
+      50
+    ],
+
+    "weatherFingerprint": {
+      "historical": 86,
+      "terrain": 74,
+      "landUse": 81,
+      "seasonality": 92
+    }
+  },
+
+  "panchayat-b": {
+    "name": "Panchayat B",
+    "state": "Assam",
+    "district": "Demo District",
+    "block": "Demo Block",
+    "temperature": 26.8,
+    "rainfall": 12.6,
+    "humidity": 68,
+    "confidence": 91,
+    "risk": "LOW",
+    "riskClass": "low",
+
+    "forecast": [
+      32,
+      28,
+      45,
+      38,
+      42
+    ],
+
+    "weatherFingerprint": {
+      "historical": 89,
+      "terrain": 78,
+      "landUse": 84,
+      "seasonality": 90
+    }
+  },
+
+  "panchayat-c": {
+    "name": "Panchayat C",
+    "state": "Assam",
+    "district": "Demo District",
+    "block": "Demo Block",
+    "temperature": 28.1,
+    "rainfall": 26.8,
+    "humidity": 76,
+    "confidence": 83,
+    "risk": "HIGH",
+    "riskClass": "high",
+
+    "forecast": [
+      62,
+      75,
+      88,
+      70,
+      65
+    ],
+
+    "weatherFingerprint": {
+      "historical": 82,
+      "terrain": 71,
+      "landUse": 79,
+      "seasonality": 88
+    }
+  },
+
+  "panchayat-d": {
+    "name": "Panchayat D",
+    "state": "Assam",
+    "district": "Demo District",
+    "block": "Demo Block",
+    "temperature": 25.9,
+    "rainfall": 9.4,
+    "humidity": 61,
+    "confidence": 94,
+    "risk": "LOW",
+    "riskClass": "low",
+
+    "forecast": [
+      22,
+      35,
+      30,
+      28,
+      34
+    ],
+
+    "weatherFingerprint": {
+      "historical": 93,
+      "terrain": 86,
+      "landUse": 88,
+      "seasonality": 95
+    }
+  }
+}
